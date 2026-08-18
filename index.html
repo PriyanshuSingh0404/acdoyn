@@ -512,8 +512,13 @@
     </div>
   </footer>
 
-  <!-- SIMULATION SCRIPT / INTERACTIVE DATA -->
+  <!-- ============================================================================
+       SECTION 9: INTERACTIVE SCRIPTS & DATA
+       ============================================================================ -->
   <script>
+    /* ==========================================================================
+       SECTION 9.1: MIGRATION DATA CONFIGURATION
+       ========================================================================== */
     // Migration data matrix
     const migrations = {
       'idx-email': {
@@ -607,6 +612,9 @@ CREATE TABLE invoices (
 
     let activeId = 'idx-email';
 
+    /* ==========================================================================
+       SECTION 9.2: THEME MANAGEMENT
+       ========================================================================== */
     // Theme Management Script
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -636,6 +644,9 @@ CREATE TABLE invoices (
       }
     });
 
+    /* ==========================================================================
+       SECTION 9.3: ANIMATION & METRICS UTILITIES
+       ========================================================================== */
     // Helper functions for animating metric values smoothly
     function animateValue(id, target, suffix = '', duration = 800) {
       const obj = document.getElementById(id);
@@ -683,6 +694,9 @@ CREATE TABLE invoices (
       requestAnimationFrame(update);
     }
 
+    /* ==========================================================================
+       SECTION 9.4: MIGRATION SELECTION & SIMULATOR LOGIC
+       ========================================================================== */
     // Interactive simulator function
     function selectMigration(id) {
       if (id === activeId) return;
@@ -721,6 +735,9 @@ CREATE TABLE invoices (
       }, 550);
     }
 
+    /* ==========================================================================
+       SECTION 9.5: MIGRATION RENDERING & UI UPDATES
+       ========================================================================== */
     function renderActiveMigration() {
       const data = migrations[activeId];
       
@@ -799,6 +816,9 @@ CREATE TABLE invoices (
       });
     }
 
+    /* ==========================================================================
+       SECTION 9.6: INITIALIZATION
+       ========================================================================== */
     // Initial render call
     renderActiveMigration();
   </script>
